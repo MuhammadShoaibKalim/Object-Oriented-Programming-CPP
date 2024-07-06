@@ -61,7 +61,7 @@ int main() {
         cout << "3. Withdraw" << endl;
         cout << "4. Show details" << endl;
         cout << "5. Exit" << endl<<endl;
-        cout << "Enter your choice : "<<endl;
+        cout << "Enter your choice : ";
         cin >> choice;
 
         switch (choice) {
