@@ -12,6 +12,7 @@ using namespace std;
 class ATM{
      private:
        double balance;
+       string pin;
      public:
        ATM (double bal) {
          balance=bal;
@@ -34,17 +35,32 @@ class ATM{
             cout << "Amount withdrawn successfully." << endl;
         }
     }
-       void transfer()
+       void transfer( ATM &toATM, double amount)
        {
-             
+             string enteredPasskey;
+              cout << "Enter your passkey: ";
+              cin >> enteredPasskey;
+             if(enteredPasskey==pin)
+             {
+                if (amount > balance) {
+                    cout << "Insufficient Balance" << endl;
+                } else {
+                    balance -= amount;
+                    toATM.deposit(amount);
+                    cout << "Amount transferred successfully." << endl;
+                }
+             }
+             else
+             {
+                cout<<" You entered wrong key...";
+             }
+
        }
        
 };
 int main() {
               system("pause");
-              system("cls");
-             // Create an object of ATM class with balance 12000
-             ATM MyATM(12000);
+              ATM MyATM(12000);
          
               
           int choice;
