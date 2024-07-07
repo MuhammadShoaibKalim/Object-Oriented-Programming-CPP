@@ -7,6 +7,7 @@ Consider an ATM where you can perform following function 🙂
 */
 
 #include <iostream>
+#include<iomanip>
 using namespace std;
 class ATM{
      private:
@@ -25,14 +26,14 @@ class ATM{
           balance += amount;
           cout<<" You have successfully deposited amount!!";
        }
-       double withdraw(double amount)
-       {
-            if(amount>balance)
-              cout<<"Insufficient Balance";
-            else
-              balance -= amount;
-              cout << "Amount withdrawn successfully." << endl;
-       }
+       void withdraw(double amount) {
+        if (amount > balance) {
+            cout << "Insufficient Balance" << endl;
+        } else {
+            balance -= amount;
+            cout << "Amount withdrawn successfully." << endl;
+        }
+    }
        void transfer()
        {
              
