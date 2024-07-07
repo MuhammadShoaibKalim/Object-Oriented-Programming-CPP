@@ -6,10 +6,7 @@ Consider an ATM where you can perform following function 🙂
 4- Exit
 */
 
-
-
 #include <iostream>
-#include <string>
 using namespace std;
 
 class ATM {
@@ -17,21 +14,17 @@ private:
     double balance;
     string passkey;
 public:
-    // Constructor to initialize the ATM with a given balance and passkey
     ATM(double bal, string key) : balance(bal), passkey(key) {}
 
-    // Function to get the current balance
     double get_balance() const {
         return balance;
     }
 
-    // Function to deposit an amount into the ATM
     void deposit(double amount) {
         balance += amount;
         cout << "You have successfully deposited amount!" << endl;
     }
 
-    // Function to withdraw an amount from the ATM
     void withdraw(double amount) {
         if (amount > balance) {
             cout << "Insufficient Balance" << endl;
@@ -41,7 +34,6 @@ public:
         }
     }
 
-    // Function to transfer an amount from one ATM to another
     void transfer(ATM &toAccount, double amount) {
         string enteredPasskey;
         cout << "Enter your passkey: ";
@@ -62,11 +54,10 @@ public:
 };
 
 int main() {
-    system("clear"); // Use "cls" for Windows
+    system("cls");
 
-    // Create an object of ATM class with balance and passkey
     ATM MyATM(12000, "1234");
-    ATM ReceiverATM(5000, "5678"); // Another account for transfer
+    ATM ReceiverATM(5000, "5678");
 
     int choice;
     do {
@@ -117,7 +108,7 @@ int main() {
             cout << "Press Enter to continue...";
             cin.ignore();
             cin.get();
-            system("cls"); // Clear screen (use "cls" on Windows)
+            system("cls");
         }
     } while (choice != 5);
 
