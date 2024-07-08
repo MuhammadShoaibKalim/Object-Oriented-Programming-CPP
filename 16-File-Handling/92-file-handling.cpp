@@ -26,7 +26,7 @@ public:
 
 int main() {
     Student student1[3];
-    ofstream Outfile("student.txt");  // Changed file extension to .txt
+    ofstream Outfile("student.txt");  
 
     if (!Outfile) {
         cerr << "File could not be opened!" << endl;
