@@ -18,7 +18,7 @@ Key Concepts:
 
 ```
 **Lecture 02: Creating Classes and Objects**
-
+Syntax
 class ClassName {
     // Access specifiers: private, public, protected
     private:
@@ -26,7 +26,6 @@ class ClassName {
     public:
         // Member functions
 };
-
 int main() {
     ClassName objectName; // Creating an object
     return 0;
