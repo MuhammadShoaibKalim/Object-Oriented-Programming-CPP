@@ -14,3 +14,22 @@ Key Concepts:
 ➡️ Abstraction: Hiding complex implementation details.
 ➡️ Inheritance: Deriving new classes from existing ones.
 ➡️ Polymorphism: Ability to process objects differently based on their data type or class.
+
+
+```
+**Lecture 02: Creating Classes and Objects**
+
+class ClassName {
+    // Access specifiers: private, public, protected
+    private:
+        // Data members
+    public:
+        // Member functions
+};
+
+int main() {
+    ClassName objectName; // Creating an object
+    return 0;
+}
+
+```
