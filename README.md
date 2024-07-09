@@ -178,7 +178,7 @@ public:
 
 **Lecture 09: Placing Class in Separate Files**
 ```
-Header File (ClassName.h):
+1-Header File (ClassName.h):
 
 
 #ifndef CLASSNAME_H
@@ -192,11 +192,24 @@ public:
 };
 
 #endif
-Source File (ClassName.cpp):
+
 ```
 
 ```
+2-Source File (ClassName.cpp):
+
 #include "ClassName.h"
 
 // Member function definitions
+```
+
+```
+3-Main File (main.cpp):
+
+
+#include "ClassName.h"
+int main() {
+    ClassName obj;
+    return 0;
+}
 ```
