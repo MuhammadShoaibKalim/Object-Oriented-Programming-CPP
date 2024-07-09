@@ -10,6 +10,7 @@ class Student
       char grade;
     public:
       Student(string n, int i, int a, char g) : name(n), id(i), age(a), grade(g) {}; 
+      
     void set_name(string name)
     {
         this->name = name;
@@ -41,8 +42,16 @@ class Student
     {
         this->grade = grade;
     }
+    void display_Student()
+{
+       cout<<"\t\t Name :"<<name<<endl;
+       cout<<"\t\t Id   :"<<id<<endl;
+       cout<<"\t\t Age   :"<<age<<endl;
+       cout<<"\t\t Grade :"<<grade<<endl;
+}
 
 };
+
 //create function to add new student
 void addNewStudent(vector<Student> &students)
 {
@@ -72,29 +81,39 @@ void addNewStudent(vector<Student> &students)
     students.push_back(newStudent);
     cout<<"\t\t Student added successfully!"<<endl;
 }
-void displayAllStudent(vector<Student> &students)
+void displayAllStudent(vector<Student>& students)
 {
-     
+    cout<<"\t\t ------------------------------ "<<endl;
+    cout<<"\t\t    Students List   "<<endl;
+    for (int i = 0; i < students.size(); i++)
+    {
+        students[i].display_Student();
+        cout<<endl;
+    }
+    cout<<"\t\t ------------------------------ "<<endl;
 }
 int main() {
        vector<Student> students;
        students.push_back(Student("Ahmad", 1, 18, 'A'));
 
-       int option;
-       while(true)
-       {
+    
+       char choice;
+       do{
+        int option;
+        system("cls");
         cout<<"\t\t ------------------------------ "<<endl;
         cout<<"\t\t    Student Management System   "<<endl;
         cout<<"\t\t ------------------------------ "<<endl;
-
         cout<<"\t\t  1. Add new student "<<endl;
         cout<<"\t\t  2. Display all students "<<endl;
         cout<<"\t\t  3. Update Student "<<endl;
         cout<<"\t\t  4. Search Student "<<endl;
         cout<<"\t\t  5. Delete Student "<<endl;
         cout<<"\t\t  6. Exit"<<endl;
-
+        
+        
         cout <<"\t\t Enter your choice: ";
+        
         cin >> option;
 
         switch (option)
@@ -104,9 +123,17 @@ int main() {
                 break;
            case 2:
                  displayAllStudent(students);
-                 break;   
+                 break; 
+           case 6:
+               default:
+               cout<<"\t\t Invalid choice.."<<endl;        
         }
+         
+         cout<<" Do you want to continue : [y/n] ? ";
+         cin>>choice;
+         
        }
+       while(choice=='y'|| choice=='Y');
     
     return 0;
 }
