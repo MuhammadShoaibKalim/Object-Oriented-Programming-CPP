@@ -15,8 +15,8 @@ Enter your choice 👏
 using namespace std;
 
 int main() {
-   
-   cout<<"!--Student Management System--!";
+   system("cls");
+   cout<<".--Student Management System--.";
     
     return 0;
 }
