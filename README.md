@@ -498,6 +498,7 @@ when overloading operators that cannot be member functions
 Access to Internal Data: When external functions or classes need to 
 access private data without providing public accessors, friend 
 functions and classes can be used.
+```
 
 **Lecture 19: Templates**
 ```
