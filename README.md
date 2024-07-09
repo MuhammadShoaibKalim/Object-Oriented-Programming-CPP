@@ -31,5 +31,4 @@ int main() {
     ClassName objectName; // Creating an object
     return 0;
 }
-
 ```
