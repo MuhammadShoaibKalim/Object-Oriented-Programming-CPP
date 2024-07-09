@@ -141,3 +141,62 @@ int main() {
     return 0;
 }
 ```
+
+**Lecture 06: Access Specifiers (Private, Public, Protected)**
+```
+Private: Accessible only within the class.
+Public: Accessible from outside the class.
+Protected: Accessible within the class and its derived classes.
+```
+
+**Lecture 07: Constructor in C++**
+```
+Definition: Special member function that initializes objects.
+Syntax:
+
+class ClassName {
+public:
+    ClassName() {
+        // Constructor code
+    }
+};
+```
+
+
+**Lecture 08: Destructor in C++**
+```
+Definition: Special member function that cleans up when an object goes out of scope.
+Syntax:
+
+class ClassName {
+public:
+    ~ClassName() {
+        // Destructor code
+    }
+};
+```
+
+**Lecture 09: Placing Class in Separate Files**
+```
+Header File (ClassName.h):
+
+
+#ifndef CLASSNAME_H
+#define CLASSNAME_H
+
+class ClassName {
+private:
+    // Data members
+public:
+    // Member functions
+};
+
+#endif
+Source File (ClassName.cpp):
+```
+
+```
+#include "ClassName.h"
+
+// Member function definitions
+```
