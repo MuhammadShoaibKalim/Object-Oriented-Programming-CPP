@@ -83,8 +83,15 @@ void addNewStudent(vector<Student> &students)
 }
 void displayAllStudent(vector<Student>& students)
 {
+    
     cout<<"\t\t ------------------------------ "<<endl;
     cout<<"\t\t    Students List   "<<endl;
+    
+     if(students.empty())
+     {
+        cout<<"\t\t No student found...";
+     }
+
     for (int i = 0; i < students.size(); i++)
     {
         students[i].display_Student();
