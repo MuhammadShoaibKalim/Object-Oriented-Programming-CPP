@@ -96,7 +96,7 @@ int main() {
 
 ```
 
-**Setter and Getter function**
+**Lecture 05: Setter and Getter function**
 ```
 #include <iostream>
 using namespace std;
