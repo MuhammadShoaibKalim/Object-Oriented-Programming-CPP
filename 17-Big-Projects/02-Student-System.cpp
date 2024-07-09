@@ -52,15 +52,29 @@ void addNewStudent(vector<Student> &students)
     int id;
     cout<<" Enter the id :";
     cin>>id;
+     //check if already exits
+    for (int i = 0; i < students.size(); i++)
+    {
+        if(students[i].get_id()==id)
+        {
+            cout<<"\t\t Student already exist"<<endl;
+            return;
+        }
+    }
     int age;
     cout<<" Enter the age :";
     cin>>age;
     char grade;
     cout<<" Enter the grade :";
     cin>>grade;
-
+    
     Student newStudent(name, id, age, grade);
     students.push_back(newStudent);
+    cout<<"\t\t Student added successfully!"<<endl;
+}
+void displayAllStudent(vector<Student> &students)
+{
+     
 }
 int main() {
        vector<Student> students;
@@ -69,15 +83,29 @@ int main() {
        int option;
        while(true)
        {
-        cout<<"\n  1. Add new student ";
-        cout<<"\n  2. Display all student ";
-        cout<<"\n  3. Update Student ";
-        cout<<"\n  4. Search Student ";
-        cout<<"\n  5. Delete Student ";
-        cout<<"\n  6. Exit";
+        cout<<"\t\t ------------------------------ "<<endl;
+        cout<<"\t\t    Student Management System   "<<endl;
+        cout<<"\t\t ------------------------------ "<<endl;
 
-        cout << "\n Enter your choice: ";
+        cout<<"\t\t  1. Add new student "<<endl;
+        cout<<"\t\t  2. Display all students "<<endl;
+        cout<<"\t\t  3. Update Student "<<endl;
+        cout<<"\t\t  4. Search Student "<<endl;
+        cout<<"\t\t  5. Delete Student "<<endl;
+        cout<<"\t\t  6. Exit"<<endl;
+
+        cout <<"\t\t Enter your choice: ";
         cin >> option;
+
+        switch (option)
+        {
+           case 1:
+                addNewStudent(students);
+                break;
+           case 2:
+                 displayAllStudent(students);
+                 break;   
+        }
        }
     
     return 0;
