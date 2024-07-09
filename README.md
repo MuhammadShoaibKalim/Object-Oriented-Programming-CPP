@@ -23,7 +23,7 @@ Syntax
 class ClassName {
 
     // Access specifiers: private, public, protected
-    
+
     private:
         // Data members
     public:
@@ -33,4 +33,23 @@ int main() {
     ClassName objectName; // Creating an object
     return 0;
 }
+```
+
+**Lecture 03: Creating Class Member Functions**
+```
+Definition: Functions defined inside a class.
+
+Syntax:
+
+class ClassName {
+private:
+    int data;
+public:
+    void setData(int d) {
+        data = d;
+    }
+    int getData() {
+        return data;
+    }
+};
 ```
