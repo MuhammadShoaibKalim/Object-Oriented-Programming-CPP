@@ -99,6 +99,33 @@ void displayAllStudent(vector<Student>& students)
     }
     // cout<<"\t\t ------------------------------ "<<endl;
 }
+void SearchStudent(vector<Student> students){
+       int id;
+       cout<<"\t\t Enter the id to search :";
+       cin>>id;
+       
+       bool found=false;
+       
+       cout<<"\t\t ------------------------------ "<<endl;
+       cout<<"\t\t    Search Result   "<<endl;
+       
+       for (int i = 0; i < students.size(); i++)
+       {
+        if (students[i].get_id()==id)
+        {
+            students[i].display_Student();
+            found=true;
+            break;
+        }
+        
+       }
+       if(!found)
+       {
+            cout<<"\t\t No student found with id "<<id<<endl;
+       }
+    
+       
+}
 int main() {
        vector<Student> students;
        students.push_back(Student("Ahmad", 1, 18, 'A'));
@@ -113,8 +140,8 @@ int main() {
         cout<<"\t\t ------------------------------ "<<endl;
         cout<<"\t\t  1. Add new student "<<endl;
         cout<<"\t\t  2. Display all students "<<endl;
-        cout<<"\t\t  3. Update Student "<<endl;
-        cout<<"\t\t  4. Search Student "<<endl;
+        cout<<"\t\t  3. Search Student "<<endl;
+        cout<<"\t\t  4. Update Student "<<endl;
         cout<<"\t\t  5. Delete Student "<<endl;
         cout<<"\t\t  6. Exit"<<endl;
         
@@ -131,6 +158,9 @@ int main() {
            case 2:
                  displayAllStudent(students);
                  break; 
+            case 3:
+                 SearchStudent(students);
+                 break;      
            case 6:
                default:
                cout<<"\t\t Invalid choice.."<<endl;        
