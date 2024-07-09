@@ -53,3 +53,45 @@ public:
     }
 };
 ```
+**Lecture 04: Input and Output Methods in Classes**
+
+```
+Example:
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+    int marks;
+
+public:
+    void input() {
+        cout << "Enter student's name: ";
+        getline(cin, name);
+        cout << "Enter student's age: ";
+        cin >> age;
+        cout << "Enter student's marks: ";
+        cin >> marks;
+        cin.ignore();
+    }
+
+    void output() const {
+        cout << "Student's Name: " << name << endl;
+        cout << "Student's Age: " << age << endl;
+        cout << "Student's Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    Student student;
+    student.input();
+    student.output();
+    return 0;
+}
+
+```
