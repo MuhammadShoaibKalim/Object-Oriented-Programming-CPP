@@ -86,7 +86,7 @@ void displayAllStudent(vector<Student>& students)
     
     cout<<"\t\t ------------------------------ "<<endl;
     cout<<"\t\t    Students List   "<<endl;
-    
+
      if(students.empty())
      {
         cout<<"\t\t No student found...";
@@ -97,7 +97,7 @@ void displayAllStudent(vector<Student>& students)
         students[i].display_Student();
         cout<<endl;
     }
-    cout<<"\t\t ------------------------------ "<<endl;
+    // cout<<"\t\t ------------------------------ "<<endl;
 }
 int main() {
        vector<Student> students;
