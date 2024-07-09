@@ -97,7 +97,7 @@ void displayAllStudent(vector<Student>& students)
         students[i].display_Student();
         cout<<endl;
     }
-    // cout<<"\t\t ------------------------------ "<<endl;
+  
 }
 void SearchStudent(vector<Student> students){
        int id;
@@ -126,6 +126,35 @@ void SearchStudent(vector<Student> students){
     
        
 }
+ void UpdateStudent(vector<Student> students){
+     int id;
+       cout<<"Enter the student id :";
+       cin>>id;
+
+       bool found=false;
+       for (int i = 0; i < students.size(); i++)
+       {
+            if(students[i].get_id()==id)
+            { 
+                 found=true;
+                 string name;
+                 cout<<"\t\t Enter the name of student :";
+                 cin>>name;
+                 students[i].set_name(name);
+                 int age;
+                 cout<<"\t\t Enter the age of student :";
+                 cin>>age;
+                 students[i].set_age(age);
+                 char grade;
+                 cout<<"\t\t Enter the grade of student :";
+                 cin>>grade;
+                 students[i].set_grade(grade);
+                 cout<<"\t\t Student data updated successfully!"<<endl;
+                 break;
+            }
+       }
+       
+ }
 int main() {
        vector<Student> students;
        students.push_back(Student("Ahmad", 1, 18, 'A'));
@@ -160,7 +189,10 @@ int main() {
                  break; 
             case 3:
                  SearchStudent(students);
-                 break;      
+                 break;   
+              case 4:
+                 UpdateStudent(students);
+                 break;       
            case 6:
                default:
                cout<<"\t\t Invalid choice.."<<endl;        
