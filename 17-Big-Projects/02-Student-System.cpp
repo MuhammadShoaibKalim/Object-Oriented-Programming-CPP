@@ -127,34 +127,84 @@ void SearchStudent(vector<Student> students){
        
 }
  void UpdateStudent(vector<Student> students){
-     int id;
-       cout<<"Enter the student id :";
-       cin>>id;
-
+      string name;
+       cout<<"Enter the student name :";
+       cin>>name;
+       
+       int choice;
        bool found=false;
        for (int i = 0; i < students.size(); i++)
        {
-            if(students[i].get_id()==id)
+            if(students[i].get_name()==name)
             { 
                  found=true;
-                 string name;
-                 cout<<"\t\t Enter the name of student :";
-                 cin>>name;
-                 students[i].set_name(name);
-                 int age;
-                 cout<<"\t\t Enter the age of student :";
-                 cin>>age;
-                 students[i].set_age(age);
-                 char grade;
-                 cout<<"\t\t Enter the grade of student :";
-                 cin>>grade;
-                 students[i].set_grade(grade);
-                 cout<<"\t\t Student data updated successfully!"<<endl;
-                 break;
+                 cout<<"\t\t ------------------- ";
+                 cout<<"\t\t Student found....!!!";
+
+                 cout<<"\t\t 1. Update id "<<endl;
+                 cout<<"\t\t 2. Update age "<<endl;
+                 cout<<"\t\t 3. Update grade "<<endl;
+                //  cout<<"\t\t 4. Update name "<<endl;
+
+                 cin>>choice;
+                 switch (choice)
+                 {
+                    case 1:
+                       int id;
+                       cout<<"\t\t Enter the new id";
+                       cin>>id;
+                     students[i].set_id(id);
+                     break;  
+
+                    case 2:
+                       int age;
+                       cout<<"\t\t Enter the new age";
+                       cin>>age;
+                     students[i].set_age(age);
+                     break; 
+
+                     case 3:
+                       int grade;
+                       cout<<"\t\t Enter the new grade";
+                       cin>>grade;
+                     students[i].set_age(grade);
+                     break;
+
+                    //  case 4:
+                    //    string name;
+                    //    cout<<"\t\t Enter the new name";
+                    //    cin>>name;
+                    //  students[i].set_name(name);
+                    //  break;
+                      default:
+                        cout<<"\t\t Invalid choice...";
+                 }
+
+                
             }
        }
        
  }
+  void DeleteStudent(vector<Student> students){
+      int id;
+       cout<<"Enter the student id :";
+       cin>>id;
+
+       bool found=false;
+       cout<<"\t\t ------------------------------ "<<endl;
+       cout<<"\t\t    Students Delete   "<<endl;
+      for (int i = 0; i < students.size(); i++)
+      {
+        if(students[i].get_id()==id)
+        {
+            found=true;
+            students.erase(students.begin()+i);
+            cout<<"\t\t Student deleted successfully!"<<endl;
+        }
+      }
+      
+       
+  }   
 int main() {
        vector<Student> students;
        students.push_back(Student("Ahmad", 1, 18, 'A'));
@@ -192,7 +242,10 @@ int main() {
                  break;   
               case 4:
                  UpdateStudent(students);
-                 break;       
+                 break; 
+               case 5:
+                 DeleteStudent(students);
+                 break;                
            case 6:
                default:
                cout<<"\t\t Invalid choice.."<<endl;        
