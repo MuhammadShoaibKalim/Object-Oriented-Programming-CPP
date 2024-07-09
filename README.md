@@ -363,3 +363,156 @@ public:
     }
 };
 ```
+
+**Lecture 17: Static Members and Functions**
+
+```
+Definition: Static members (variables and functions) are shared among 
+all instances of a class. They belong to the class itself rather than 
+any specific object, meaning there is only one copy of each static 
+member, regardless of how many objects are created.
+
+Static Member Variables:
+
+Shared by all objects of the class.
+Can be used to keep track of data that should be common to all instances, 
+such as a counter for the number of objects created. Declared with the 
+static keyword inside the class, but defined outside the class.
+
+class Example {
+public:
+    static int staticVar; // Declaration of static member variable
+};
+
+int Example::staticVar = 0; // Definition of static member variable
+
+int main() {
+    Example obj1, obj2;
+    obj1.staticVar = 5;
+    cout << obj2.staticVar << endl; // Outputs 5, since staticVar is shared
+    return 0;
+}
+
+Static Member Functions:
+
+Can access only static member variables and other static member functions.
+Do not have a this pointer since they are not called on instances of the class.
+Can be called using the class name rather than an object.
+
+class Example {
+public:
+    static int staticVar;
+    static void staticFunction() {
+        cout << "Static function, staticVar: " << staticVar << endl;
+    }
+};
+
+int Example::staticVar = 0; 
+
+int main() {
+    Example::staticVar = 10; // Accessing static member variable
+    Example::staticFunction(); // Calling static member function
+    return 0;
+}
+
+Use Cases:
+
+Counter for Objects: Track the number of objects created from a class.
+
+Configuration Settings: Store configuration settings or constants that 
+should be the same for all instances.
+
+Utility Functions: Implement utility functions that do not depend on 
+object-specific data.
+```
+**Lecture 18: Friend Functions and Classes**
+```
+Definition: Friend functions and classes provide a way to grant access to private and protected members of a class to non-member functions or other classes.
+
+
+Friend Function:
+
+Declared with the friend keyword inside the class.Can access private and 
+protected members of the class.Not a member function, 
+but has special access privileges.
+
+
+class Example {
+private:
+    int data;
+public:
+    Example(int d) : data(d) {}
+    friend void display(const Example& obj); 
+};
+
+void display(const Example& obj) {
+    cout << "Data: " << obj.data << endl; // Accessing private member
+}
+
+int main() {
+    Example obj(42);
+    display(obj); // Calling friend function
+    return 0;
+}
+
+Friend Class:
+
+Declared with the friend keyword inside the class.
+All member functions of the friend class can access private and protected 
+members of the class that declared the friendship.
+
+
+class Example; // Forward declaration
+
+class FriendClass {
+public:
+    void display(const Example& obj);
+};
+
+class Example {
+private:
+    int data;
+public:
+    Example(int d) : data(d) {}
+    friend class FriendClass; // Friend class declaration
+};
+
+void FriendClass::display(const Example& obj) {
+    cout << "Data: " << obj.data << endl; // Accessing private member
+}
+
+int main() {
+    Example obj(42);
+    FriendClass friendObj;
+    friendObj.display(obj); // Calling friend class method
+    return 0;
+}
+
+Use Cases:
+
+Operator Overloading: 
+Friend functions are commonly used for operator overloading, especially 
+when overloading operators that cannot be member functions 
+(e.g., << and >>).
+
+Access to Internal Data: When external functions or classes need to 
+access private data without providing public accessors, friend 
+functions and classes can be used.
+
+**Lecture 19: Templates**
+```
+Definition: Templates allow writing generic and reusable code by defining 
+functions and classes that can operate with any data type.
+
+Syntax:
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    cout << "Int sum: " << add(3, 4) << endl;       // Outputs 7
+    cout << "Double sum: " << add(3.5, 2.5) << endl; // Outputs 6.0
+    return 0;
+}
+```
