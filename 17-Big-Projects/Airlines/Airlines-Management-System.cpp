@@ -43,7 +43,21 @@ public:
         return seats;
     }
 };
-
+void display(){
+    ifstream in("Flight.txt");
+    if(!in) 
+    {
+        cout << "File can't be opened...";
+    } 
+    else 
+    {
+        string line;
+        while (getline(in, line)) {
+            cout << line << endl;
+        }
+        in.close();
+    }
+}
 int main() {
     Airline flight1("F01", "Lahore", "Pakistan", 50);
     Airline flight2("F02", "Lahore", "Pakistan", 51);
@@ -60,6 +74,31 @@ int main() {
         out.close();
     }
       
-       
+      bool exit=false;
+      while(!exit)
+      {  
+          system("cls");
+          cout<<"\t\t Welcome to Online reservation system "<<endl;
+          cout<<"\t\t 1.Reserve Flights "<<endl;
+          cout<<"\t\t 2.exit"<<endl;
+          cout<<"\t\t Enter your choice: ";
+          
+          int choice;
+          cin>>choice;
+          if(choice==1)
+          {
+             system("cls");
+             display();
+             string flight;
+             cout<<"\n\t\t Enter flight number: ";
+             cin>>flight;
+             
+             if(flight==flight1.get_flight() && flight1.get_seats()>0)
+              {
+                  flight1.set_seats(flight1.get_seats()-1);
+                  cout<<"\n\t\t Flight reserved successfully!"<<endl;
+              }
+          }     
+      }
     return 0;
 }
