@@ -95,8 +95,8 @@ int main() {
              
              if(flight==flight1.get_flight() && flight1.get_seats()>0)
               {
-                  flight1.set_seats(flight1.get_seats()-1);
-                  cout<<"\n\t\t Flight reserved successfully!"<<endl;
+                //   flight1.set_seats(flight1.get_seats()-1);
+                //   cout<<"\n\t\t Flight reserved successfully!"<<endl;
               }
           }     
       }
