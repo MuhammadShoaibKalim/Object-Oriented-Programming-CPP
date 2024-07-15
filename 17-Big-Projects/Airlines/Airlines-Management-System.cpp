@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include<sstream>
 using namespace std;
 
 class Airline {
@@ -51,8 +52,17 @@ public:
          while(getline(in, line))
          {
             int postion=line.find(flight);
-            if(postion !=string::npos )
-            
+            if(postion !=string::npos ){
+               int current = seats-1;
+               seats=current;
+               stringstream ss;
+               ss<<current;
+                string stringCurrent=ss.str();
+
+                int seatPosition=line.find_last_of(":");
+                line.replace(seatPosition+2, string::npos,stringCurrent);
+         }
+         
          }
     }
 };
