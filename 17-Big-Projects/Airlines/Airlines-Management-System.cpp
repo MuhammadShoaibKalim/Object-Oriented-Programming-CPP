@@ -42,6 +42,19 @@ public:
     int get_seats() const {
         return seats;
     }
+    void update(string flight)
+    {  
+        ifstream in("Flight.txt");
+        ofstream out("Flight.txt");
+       
+       string line;
+         while(getline(in, line))
+         {
+            int postion=line.find(flight);
+            if(postion !=string::npos )
+            
+         }
+    }
 };
 void display(){
     ifstream in("Flight.txt");
@@ -95,8 +108,8 @@ int main() {
              
              if(flight==flight1.get_flight() && flight1.get_seats()>0)
               {
-                //   flight1.set_seats(flight1.get_seats()-1);
-                //   cout<<"\n\t\t Flight reserved successfully!"<<endl;
+                  flight1.set_seats(flight1.get_seats()-1);
+                  cout<<"\n\t\t Flight reserved successfully!"<<endl;
               }
           }     
       }
