@@ -62,8 +62,13 @@ public:
                 int seatPosition=line.find_last_of(":");
                 line.replace(seatPosition+2, string::npos,stringCurrent); 
          }
-
+          out<<line<<endl;
          }
+         out.close();
+         in.close();
+         remove("Flight.txt");
+         rename("Flight.txt","Flight.txt");
+        cout << "File saved successfully..."<<endl;
     }
 };
 void display(){
@@ -118,10 +123,22 @@ int main() {
              
              if(flight==flight1.get_flight() && flight1.get_seats()>0)
               {
-                  flight1.set_seats(flight1.get_seats()-1);
-                  cout<<"\n\t\t Flight reserved successfully!"<<endl;
+                  flight1.update(flight);
               }
+              else if(flight1.get_seats()<=0)
+              {
+              cout<<" Sorry, seats can't be available!"<<endl;
+              }
+              Sleep(5000);
           }     
+          else if(choice==2)
+          {
+            system("cls");
+            exit=true;
+            cout<<"\n\t\t Thank you for using our system. Goodbye!"<<endl;
+            Sleep(3000);
+            break;
+          }
       }
     return 0;
 }
