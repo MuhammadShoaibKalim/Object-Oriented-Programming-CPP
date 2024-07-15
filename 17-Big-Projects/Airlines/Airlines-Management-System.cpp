@@ -60,9 +60,9 @@ public:
                 string stringCurrent=ss.str();
 
                 int seatPosition=line.find_last_of(":");
-                line.replace(seatPosition+2, string::npos,stringCurrent);
+                line.replace(seatPosition+2, string::npos,stringCurrent); 
          }
-         
+
          }
     }
 };
