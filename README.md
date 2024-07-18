@@ -346,11 +346,12 @@ int main() {
 }
 ```
 **Lecture 16: Abstract Classes and Pure Virtual Functions**
-```
+
 Definition: Abstract class is a class that cannot be instantiated and often 
 contains pure virtual functions.
 
 Syntax:
+```
 class AbstractClass {
 public:
     virtual void pureVirtualFunction() = 0; // Pure virtual function
@@ -379,6 +380,7 @@ Can be used to keep track of data that should be common to all instances,
 such as a counter for the number of objects created. Declared with the 
 static keyword inside the class, but defined outside the class.
 
+```
 class Example {
 public:
     static int staticVar; // Declaration of static member variable
@@ -392,7 +394,7 @@ int main() {
     cout << obj2.staticVar << endl; // Outputs 5, since staticVar is shared
     return 0;
 }
-
+```
 Static Member Functions:
 
 Can access only static member variables and other static member functions.
