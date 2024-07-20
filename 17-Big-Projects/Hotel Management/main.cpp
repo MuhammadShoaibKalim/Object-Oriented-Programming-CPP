@@ -1,5 +1,14 @@
 #include <iostream>
 #include <string>
+#include "Customer.h"
+#include "Room.h"
+#include "Hotel.h"
+#include "Staff.h"
+#include "Payment.h"
+#include "Housekeeping.h"
+#include "RoomServiceMeal.h"
+#include "CheckSecurity.h"
+#include "Reservation.h"
 using namespace std;
 
 int main() {
