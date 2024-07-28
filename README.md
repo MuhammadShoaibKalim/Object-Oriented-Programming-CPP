@@ -1,6 +1,8 @@
 # Object-Oriented Programming (OOP) Using C++: Comprehensive Notes
 
-
+### Additional reading:
+1. https://medium.com/@rishu__2701/mastering-object-oriented-programming-oop-in-c-a-comprehensive-guide-62b3554822eb
+2. 
 ```
 Lecture 01: Introduction to Object-Oriented Programming (OOP) Using C++
 
