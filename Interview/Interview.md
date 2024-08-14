@@ -227,3 +227,133 @@ int main() {
     return 0;
 }
 ```
+
+### 11. What is a Destructor in C++?
+A destructor in C++ is a special member function of a class that is called automatically when an object of that class is destroyed. The destructor is responsible for cleaning up resources that the object may have acquired during its lifetime, such as memory, file handles, or network connections.
+
+#### Key Points:
+- The destructor has the same name as the class but is preceded by a tilde (~).
+- It does not take any arguments and cannot be overloaded.
+- It is automatically invoked when an object goes out of scope or is explicitly deleted.
+  
+**Example:**
+
+```
+#include <iostream>
+
+class MyClass {
+public:
+    // Constructor
+    MyClass() {
+        std::cout << "Constructor: Object is created." << std::endl;
+    }
+
+    // Destructor
+    ~MyClass() {
+        std::cout << "Destructor: Object is destroyed." << std::endl;
+    }
+};
+
+int main() {
+    MyClass obj; // Object is created, constructor is called
+    // Destructor will be called automatically when obj goes out of scope
+    return 0;
+}
+```
+In this example, the constructor is responsible for initializing the object's data members, while the destructor is responsible for releasing any memory or resources allocated during the object's lifetime.
+
+### 12. What is Function Overloading in C++?
+Function overloading in C++ is a feature that allows multiple functions to have the same name but with different parameter lists (different number of parameters or types of parameters). This allows you to define functions that perform similar tasks but with different input types or numbers of inputs, making the code more flexible and readable.
+
+#### Key Points:
+- Same Function Name: The functions have the same name.
+- Different Parameter List: The functions differ by the number or type of parameters.
+- Compile-time Polymorphism: The correct function to call is determined at compile-time based on the arguments provided.
+
+**Example:**
+
+```
+#include <iostream>
+
+// Function to add two integers
+int add(int a, int b) {
+    return a + b;
+}
+
+// Overloaded function to add three integers
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+// Overloaded function to add two doubles
+double add(double a, double b) {
+    return a + b;
+}
+
+int main() {
+    std::cout << "Sum of 2 and 3: " << add(2, 3) << std::endl;          // Calls the first function
+    std::cout << "Sum of 1, 2, and 3: " << add(1, 2, 3) << std::endl;    // Calls the second function
+    std::cout << "Sum of 2.5 and 3.5: " << add(2.5, 3.5) << std::endl;  // Calls the third function
+    return 0;
+}
+```
+
+### 13. What is STL in C++?
+STL stands for Standard **Template Library**, and it's a powerful library in C++ that provides a collection of classes and functions for managing data structures and algorithms. STL offers a set of template-based tools to work with sequences of data, such as arrays, vectors, and lists, as well as associative containers like maps and sets. STL is divided into three main components:
+
+**Containers**: These are data structures like `vector`, `list`, `map`, and set that store collections of data.
+
+**Algorithms**: These are functions like `sort()`, `find()`, and `accumulate()` that perform operations on the data in containers.
+
+**Iterators**: These act as pointers to elements in containers and allow traversal through the data.
+
+**Example of Using STL:**
+```
+#include <iostream>
+#include <vector>
+#include <algorithm> // For sort()
+
+int main() {
+    // Create a vector of integers
+    std::vector<int> numbers = {5, 2, 9, 1, 7};
+
+    // Sort the vector using the sort algorithm
+    std::sort(numbers.begin(), numbers.end());
+
+    // Output the sorted vector
+    std::cout << "Sorted numbers: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+```
+
+### 14. What is type casting in C++?
+
+
+Type casting in C++ is a way to convert one data type into another. It helps in ensuring compatibility and flexibility in programming. 
+C++ provides two types of casting: **implicit** and **explicit**.
+
+**Implicit casting** is done automatically by the compiler, while **explicit casting** requires the programmer to explicitly convert the data type. This can be useful when working with mixed data types or performing specific operations.
+
+```
+int main() {
+    int num = 10;
+    double result = num; // Implicit casting from int to double
+    std::cout << "Result: " << result << std::endl; // Output: 10.0
+    return 0;
+}
+```
+
+```
+int main() {
+    double num = 9.7;
+    int result = (int)num; // Explicit casting from double to int
+    std::cout << "Result: " << result << std::endl; // Output: 9
+    return 0;
+}
+```
+
