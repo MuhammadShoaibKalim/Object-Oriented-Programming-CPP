@@ -357,3 +357,173 @@ int main() {
 }
 ```
 
+### 16. How to Use a String in C++?
+To use a string in C++, you need to follow these steps:
+
+#### 1. Include the <string> Header
+
+The <string> header provides the std::string class, which allows you to work with strings.
+
+```
+#include <iostream>
+#include <string> // Include the string header
+```
+#### 2. Declare a String Variable
+
+You can declare a string variable using the std::string class.
+
+```
+std::string myString;
+```
+#### 3. Assign a Value to the String
+You can assign a value to a string variable either at the time of declaration or later.
+
+```
+myString = "Hello, World!";
+// or
+std::string anotherString = "Welcome to C++";
+```
+#### 4. Perform String Operations
+You can perform various operations on strings, such as concatenation, finding the length, accessing characters, and more.
+
+**Concatenation:**
+
+```
+std::string firstName = "John";
+std::string lastName = "Doe";
+std::string fullName = firstName + " " + lastName; // Concatenate strings
+```
+**Finding Length:**
+
+```
+int length = fullName.length(); // Get the length of the string
+```
+
+**Accessing Characters:**
+
+```
+char firstLetter = fullName[0]; // Access the first character of the string
+```
+#### 5. Output the String
+You can print the string to the console using std::court.
+
+```
+std::cout << fullName << std::endl;
+```
+
+**Example Program:**
+
+```
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string firstName = "John";
+    std::string lastName = "Doe";
+    std::string fullName = firstName + " " + lastName; // Concatenate strings
+    
+    std::cout << "Full Name: " << fullName << std::endl;
+    std::cout << "Length of Full Name: " << fullName.length() << std::endl;
+    std::cout << "First Character: " << fullName[0] << std::endl;
+    
+    return 0;
+}
+```
+### 17. What is stream in C++?
+
+A stream in C++ is an abstraction that allows input and output operations. It represents a sequence of characters that are read from or written to a specific device such as the console or a file.
+
+Streams provide a convenient way to handle input and output in a standardized manner. There are different types of streams such as the standard input stream (cin) and the standard output stream (count).
+
+#### Types of Streams:
+
+**Input Stream (std::istream):**
+
+Used for reading data.
+
+**Example:** std::cin for reading input from the console.
+
+**Output Stream (std::ostream):**
+
+Used for writing data.
+**Example:** std::cout for writing output to the console.
+
+**Commonly Used Streams:**
+
+**std::cin:** Standard input stream, typically connected to the keyboard.
+
+**std::cout:** Standard output stream, typically connected to the console.
+
+**std::cerr:** Standard error stream, used for displaying error messages.
+
+**std::ofstream:** Output file stream, used for writing data to a file.
+
+**std::ifstream:** Input file stream, used for reading data from a file.
+
+```
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main() {
+    // Using standard input and output streams
+    std::string name;
+    std::cout << "Enter your name: ";
+    std::cin >> name; // Reading input using std::cin
+    std::cout << "Hello, " << name << "!" << std::endl; // Writing output using std::cout
+    
+    // Using file streams
+    std::ofstream outFile("output.txt"); // Creating an output file stream
+    if (outFile.is_open()) {
+        outFile << "This is a line written to a file."; // Writing to a file
+        outFile.close(); // Closing the file
+    }
+
+    std::ifstream inFile("output.txt"); // Creating an input file stream
+    if (inFile.is_open()) {
+        std::string line;
+        std::getline(inFile, line); // Reading a line from the file
+        std::cout << "Read from file: " << line << std::endl;
+        inFile.close(); // Closing the file
+    }
+
+    return 0;
+}
+```
+### 18. What is the difference between structure and class in C++?
+
+![image](https://github.com/user-attachments/assets/5eb03ebe-f711-484f-a4bd-f37a8da1bdaa)
+
+### 19. How to clear the screen in C++? 
+
+To clear the screen in a C++ program, you can use a system-specific command with the system function from the standard library. This approach is platform-dependent, so the command will vary depending on 
+whether you're using Windows or a Unix-like system (Linux, macOS).
+
+```
+#include <iostream>
+#include <cstdlib> // Required for system()
+
+int main() {
+    std::cout << "This is a sample text on the screen." << std::endl;
+
+    // Clear the screen
+    #ifdef _WIN32
+        system("cls"); // Clear screen command for Windows
+    #else
+        system("clear"); // Clear screen command for Unix/Linux/macOS
+    #endif
+
+    std::cout << "The screen has been cleared!" << std::endl;
+
+    return 0;
+}
+```
+
+### 20. How many keywords are there in C++?
+
+
+There are a total of 95 reserved keywords in C++. These keywords have special meanings and cannot be used for re-definition or overloading.
+
+Some examples of these keywords include "alignas", "auto", "bool", "class", "double", "for", "if", "namespace", "return", and "while".
+
+
