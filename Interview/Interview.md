@@ -1,5 +1,25 @@
 # Object Oriented Programming Interview Preparation 
 
+1. [What is C++ in OOP?](#what-is-c-in-oop)
+2. [What is namespace in main file in C++?](#what-is-namespace-in-main-file-in-c)
+3. [What is operator overloading in C++?](#what-is-operator-overloading-in-c)
+4. [How to learn C++?](#how-to-learn-c)
+5. [What is the difference between C and C++?](#what-is-the-difference-between-c-and-c)
+6. [What is a Template in C++?](#what-is-a-template-in-c)
+7. [What is using namespace std in C++?](#what-is-using-namespace-std-in-c)
+8. [What is the return type of a function in C++?](#what-is-the-return-type-of-a-function-in-c)
+9. [How are function arguments passed in C++?](#how-are-function-arguments-passed-in-c)
+10. [What is a function in C++?](#what-is-a-function-in-c)
+11. [What is a Destructor in C++?](#what-is-a-destructor-in-c)
+12. [What is Function Overloading in C++?](#what-is-function-overloading-in-c)
+13. [What is STL in C++?](#what-is-stl-in-c)
+14. [What is type casting in C++?](#what-is-type-casting-in-c)
+15. [How to Use a String in C++?](#how-to-use-a-string-in-c)
+16. [What is stream in C++?](#what-is-stream-in-c)
+17. [What is the difference between structure and class in C++?](#what-is-the-difference-between-structure-and-class-in-c)
+18. [How to clear the screen in C++?](#how-to-clear-the-screen-in-c)
+19. [How many keywords are there in C++?](#how-many-keywords-are-there-in-c)
+
 ### 1. What is C++ in OOP ?
 
 C++ is a powerful imperative, general-purpose programming language. It was developed as an extension of the C programming language and provides additional features like object-oriented programming and templates.
