@@ -20,7 +20,7 @@
 18. [How to clear the screen in C++?](#how-to-clear-the-screen-in-c)
 19. [How many keywords are there in C++?](#how-many-keywords-are-there-in-c)
 
-### 1. What is C++ in OOP ?
+### 1. what-is-c-in-oop ?
 
 C++ is a powerful imperative, general-purpose programming language. It was developed as an extension of the C programming language and provides additional features like object-oriented programming and templates.
 
