@@ -1,5 +1,5 @@
 # Object Oriented Programming Interview Preparation 
-
+#### ( Programming Fundamentals ) 
 1. [What is C++ in OOP?](#what-is-c-in-oop)
 2. [What is namespace in main file in C++?](#what-is-namespace-in-main-file-in-c)
 3. [What is operator overloading in C++?](#what-is-operator-overloading-in-c)
@@ -19,6 +19,17 @@
 17. [What is the difference between structure and class in C++?](#what-is-the-difference-between-structure-and-class-in-c)
 18. [How to clear the screen in C++?](#how-to-clear-the-screen-in-c)
 19. [How many keywords are there in C++?](#how-many-keywords-are-there-in-c)
+20. [What is polymorphism in C++?](#what-is-polymorphism-in-c)
+21. [What is inheritance in C++?](#what-is-inheritance-in-c)
+22. [What is a virtual function in C++?](#what-is-a-virtual-function-in-c)
+23. [What is the difference between early binding and late binding in C++?](#what-is-the-difference-between-early-binding-and-late-binding-in-c)
+24. [What is encapsulation in C++?](#what-is-encapsulation-in-c)
+25. [What is the difference between function overriding and function overloading in C++?](#what-is-the-difference-between-function-overriding-and-function-overloading-in-c)
+26. [What is an abstract class in C++?](#what-is-an-abstract-class-in-c)
+27. [What is a pure virtual function in C++?](#what-is-a-pure-virtual-function-in-c)
+28. [How do you implement multiple inheritance in C++?](#how-do-you-implement-multiple-inheritance-in-c)
+29. [What are the advantages of using OOP in C++?](#what-are-the-advantages-of-using-oop-in-c)
+30. [What is the difference between composition and inheritance in C++?](#what-is-the-difference-between-composition-and-inheritance-in-c)
 
 ### 1. What is C++ in OOP?
 
@@ -545,5 +556,145 @@ int main() {
 There are a total of 95 reserved keywords in C++. These keywords have special meanings and cannot be used for re-definition or overloading.
 
 Some examples of these keywords include "alignas", "auto", "bool", "class", "double", "for", "if", "namespace", "return", and "while".
+
+-----------------------------------//////////////////---------------------/////////////////////--------------------///////////////-----------------///////---------------------------
+### 21. 1. What is the need for OOP and what are some major Object Oriented Programming languages?
+There are many reasons why OOPs are mostly preferred, but the most important among them are: 
+
+- OOPs help users to understand the software easily, although they don’t know the actual implementation.
+- With OOPs, the readability, understandability, and maintainability of the code increase multifold.
+- Even very big software can be easily written and managed easily using OOPs.
+
+The programming languages that use and follow the Object-Oriented Programming paradigm or OOPs, are known as Object-Oriented Programming languages.
+Some of the major Object-Oriented Programming languages include:
+
+- Java
+- C++
+- Javascript
+- Python
+- PHP
+And many more.
+
+### 21. What are classes and objects in C++?
+A class is like a blueprint of an object. It is a user-defined data type with data members and member functions and is defined with the keyword class.
+![image](https://github.com/user-attachments/assets/04e3a662-c447-42a3-9b2c-f18bc5ec5647)
+You define objects as an instance of a class. Once it creates the object, then it can operate on both data members and member functions.
+
+### 22. What are access modifiers and what does the term OOP mean?
+You use access modifiers to define accessibility for the class members. It defines how to access the members of the class outside the class scope.
+These access specifiers also play a very vital role in achieving Encapsulation - one of the major features of OOPs. Which are used to control or specify the accessibility of entities like classes, methods, etc
+There are three types of access modifiers:
+
+- Private
+- Public
+- Protected
+
+OOPs, refer to Object-Oriented Programming. It is the programming paradigm that is defined using objects. Objects can be considered as real-world instances of entities like class, that have some characteristics and behaviors.
+
+### 23.   What are some other programming paradigms other than OOPs?
+Programming paradigms refer to the method of classification of programming languages based on their features. There are mainly two types of Programming Paradigms:
+
+- Imperative Programming Paradigm
+- Declarative Programming Paradigm
+Now, these paradigms can be further classified based:
+#### 1. Imperative Programming Paradigm:
+Imperative programming focuses on HOW to execute program logic and defines control flow as statements that change a program state. This can be further classified as:
+
+**a) Procedural Programming Paradigm:** Procedural programming specifies the steps a program must take to reach the desired state, usually read in order from top to bottom.
+
+**b) Object-Oriented Programming or OOP:** Object-oriented programming (OOP) organizes programs as objects, that contain some data and have some behavior.
+
+**c) Parallel Programming:** The parallel programming paradigm breaks a task into subtasks and focuses on executing them simultaneously at the same time.
+
+#### 2. Declarative Programming Paradigm: 
+Declarative programming focuses on WHAT to execute and defines program logic, but not a detailed control flow. Declarative paradigm can be further classified into:
+
+**a) Logical Programming Paradigm:** The Logical programming paradigm is based on formal logic, which refers to a set of sentences expressing facts and rules about how to solve a problem.
+
+**b) Functional Programming Paradigm:** Functional programming is a programming paradigm where programs are constructed by applying and composing functions.
+
+**c) Database Programming Paradigm:** Database programming model is used to manage data and information structured as fields, records, and files.
+
+![image](https://github.com/user-attachments/assets/243748dc-ee3d-412e-ae5e-3db9b9cf01b2)
+
+### 24. What is meant by Structured Programming?
+Structured Programming refers to the method of programming that consists of a completely structured control flow. Here structure refers to a block, which contains a set of rules, and has a definitive control flow, such as (if/then/else), (while and for), block structures, and subroutines.
+
+Nearly all programming paradigms include Structured programming, including the OOP mode
+
+### 25. What are the main features of OOPs?
+OOPs or Object Oriented Programming mainly comprises the below four features, and make sure you don't miss any of these:
+
+- Inheritance
+- Encapsulation
+- Polymorphism
+- Data Abstraction
+![image](https://github.com/user-attachments/assets/87e895fb-848c-4da9-834c-5ef17a535e08)
+ 
+### 26. What are some advantages of using OOPs?
+1. OOPs are very helpful in solving very complex level of problems.
+2. Highly complex programs can be created, handled, and maintained easily using object-oriented programming.
+3. OOPs, promote code reuse, thereby reducing redundancy.
+4. OOPs also help to hide unnecessary details with the help of Data Abstraction.
+5. OOPs, are based on a bottom-up approach, unlike the Structural programming paradigm, which uses a top-down approach.
+6. Polymorphism offers a lot of flexibility in OOPs
+
+### 27. Why are OOPs so popular?
+OOPs programming paradigm is considered as a better style of programming. Not only it help in writing a complex piece of code easily, but it also allows users to handle and maintain them easily as well. Not only that, the main pillar of OOPs - Data Abstraction, Encapsulation, Inheritance, and Polymorphism, makes it easy for programmers to solve complex scenarios. As a result these, OOPs are so popular.
+
+### 28. Are there any limitations of Inheritance?
+Yes, with more powers comes more complications. Inheritance is a very powerful feature in OOPs, but it has some limitations too. Inheritance needs more time to process, as it needs to navigate through multiple classes for its implementation. Also, the classes involved in Inheritance - the base class and the child class, are very tightly coupled together. So if one needs to make some changes, they might need to do nested changes in both classes. Inheritance might be complex for implementation, as well. So if not correctly implemented, this might lead to unexpected errors or incorrect outputs.
+
+### 29.  What are the types of Inheritance? 
+![image](https://github.com/user-attachments/assets/28fae9d0-04cc-4dec-8bda-e3e929c4d1a8)
+
+### 30. What is a subclass and a superclass?
+The subclass is a part of Inheritance. The subclass is an entity, which inherits from another class. It is also known as the child class.
+Superclass is also a part of Inheritance. The superclass is an entity, which allows subclasses or child classes to inherit from itself.  
+ ![image](https://github.com/user-attachments/assets/a56bce5b-e451-462c-aa2c-90f53b3d4fdd)
+
+What is an interface?
+An interface refers to a special type of class, which contains methods, but not their definition. Only the declaration of methods is allowed inside an interface. To use an interface, you cannot create objects. Instead, you need to implement that interface and define the methods for their implementation.  
+```
+#include <iostream>
+using namespace std;
+
+// Define an interface using an abstract class
+class Animal {
+public:
+    // Pure virtual function
+    virtual void makeSound() = 0;
+};
+
+// Implement the interface in a derived class
+class Dog : public Animal {
+public:
+    void makeSound() override {
+        cout << "Woof!" << endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void makeSound() override {
+        cout << "Meow!" << endl;
+    }
+};
+
+int main() {
+    // Since Animal is an abstract class, we cannot create objects of it
+    // Animal animal; // This would cause a compilation error
+
+    // Create objects of classes implementing the interface
+    Dog myDog;
+    Cat myCat;
+
+    // Call the implemented methods
+    myDog.makeSound(); // Outputs: Woof!
+    myCat.makeSound(); // Outputs: Meow!
+
+    return 0;
+}
+```
 
 
