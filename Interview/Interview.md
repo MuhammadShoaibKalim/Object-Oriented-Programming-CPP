@@ -30,6 +30,22 @@
 28. [How do you implement multiple inheritance in C++?](#how-do-you-implement-multiple-inheritance-in-c)
 29. [What are the advantages of using OOP in C++?](#what-are-the-advantages-of-using-oop-in-c)
 30. [What is the difference between composition and inheritance in C++?](#what-is-the-difference-between-composition-and-inheritance-in-c)
+30. [What is a subclass and a superclass?](#what-is-a-subclass-and-a-superclass)  
+31. [What is an interface?](#what-is-an-interface)  
+32. [What is Static Polymorphism (Compile-Time Polymorphism)?](#what-is-static-polymorphism-compile-time-polymorphism)  
+33. [What is Dynamic Polymorphism (Run-Time Polymorphism)?](#what-is-dynamic-polymorphism-run-time-polymorphism)  
+34. [What is the difference between overloading and overriding?](#what-is-the-difference-between-overloading-and-overriding)  
+35. [How is data abstraction accomplished?](#how-is-data-abstraction-accomplished)  
+36. [What is an abstract class?](#what-is-an-abstract-class)  
+37. [How is an abstract class different from an interface?](#how-is-an-abstract-class-different-from-an-interface)  
+38. [Explain Inheritance with an example.](#explain-inheritance-with-an-example)  
+39. [What is an exception?](#what-is-an-exception)  
+40. [What is meant by exception handling?](#what-is-meant-by-exception-handling)
+
+
+
+
+
 
 ### 1. What is C++ in OOP?
 
@@ -38,9 +54,9 @@ C++ is a powerful imperative, general-purpose programming language. It was devel
 C++ is used to develop various applications including operating systems, games, and high-performance software. Its syntax is similar to C which makes it easy for C programmers to transition to C++.
 
 
-### 2. What is namespace in main file in C++?
+### 2. What is the namespace in the main file in C++? 
 
-In C++, a namespace is a way to group related code under a single name. It helps in organizing code and prevents naming conflicts. By using namespaces, you can avoid clashes between function names or variable names that are used in different parts of a program or in external libraries.
+In C++, a namespace is a way to group related code under a single name. It helps in organizing code and prevents naming conflicts. By using namespaces, you can avoid clashes between function names or variable names that are used in different parts of a program or external libraries.
 
 Namespaces provide a way to logically separate code and improve code readability and maintainability.
 
@@ -696,5 +712,132 @@ int main() {
     return 0;
 }
 ```
+### 31.  Static Polymorphism (Compile-Time Polymorphism)
+Static Polymorphism occurs when the function or operator that is invoked is determined at compile time. This is often achieved through:
 
+**Function Overloading:** Having multiple functions with the same name but different parameter lists.
+
+**Operator Overloading:** Defining how operators behave with user-defined types.
+In static polymorphism, the appropriate function to call is determined at compile time-based on the function signature.
+
+**Example of Function Overloading:**
+```
+#include <iostream>
+using namespace std;
+
+class Calculator {
+public:
+    // Function to add two integers
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Function to add three integers
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Function to add two doubles
+    double add(double a, double b) {
+        return a + b;
+    }
+};
+
+int main() {
+    Calculator calc;
+
+    cout << calc.add(10, 20) << endl;        // Calls add(int, int)
+    cout << calc.add(10, 20, 30) << endl;    // Calls add(int, int, int)
+    cout << calc.add(10.5, 20.5) << endl;    // Calls add(double, double)
+
+    return 0;
+}
+```
+
+
+### 32.  Dynamic Polymorphism (Run-Time Polymorphism)
+Dynamic Polymorphism occurs when the function to be called is determined at runtime. This is typically achieved through method overriding, where a derived class provides a specific implementation of a method that is already defined in its base class.
+
+To achieve dynamic polymorphism in C++, you use virtual functions.
+
+**Example of Dynamic Polymorphism Using Virtual Functions:**
+```
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    virtual void makeSound() {
+        cout << "Animal sound" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void makeSound() override {
+        cout << "Woof!" << endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void makeSound() override {
+        cout << "Meow!" << endl;
+    }
+};
+
+void playSound(Animal* animal) {
+    animal->makeSound();  // Calls the appropriate method at runtime
+}
+
+int main() {
+    Animal* myDog = new Dog();
+    Animal* myCat = new Cat();
+
+    playSound(myDog);  // Outputs: Woof!
+    playSound(myCat);  // Outputs: Meow!
+
+    delete myDog;
+    delete myCat;
+
+    return 0;
+}
+
+```
+
+### 33.  What is the difference between overloading and overriding?
+Overloading is a compile-time polymorphism feature in which an entity has multiple implementations with the same name. For example, Method overloading and Operator overloading.
+
+Overriding is a runtime polymorphism feature in which an entity has the same name, but its implementation changes during execution. For example, Method overriding.
+Image
+
+### 34. How is data abstraction accomplished?
+Data abstraction is accomplished with the help of abstract methods or abstract classes.
+
+### 35. What is an abstract class?
+An abstract class is a special class containing abstract methods. The significance of an abstract class is that the abstract methods inside it are not implemented and are only declared. So as a result, when a subclass inherits the abstract class and needs to use its abstract methods, they need to define and implement them. 
+
+### 36. How is an abstract class different from an interface?
+Interface and abstract classes both are special types of classes that contain only the methods declaration and not their implementation. However, the interface is entirely different from an abstract class. The main difference between the two is that when an interface is implemented, the subclass must define all its methods and provide its implementation. Whereas in object-oriented programming, when a subclass inherits from an abstract class with abstract methods, the subclass is generally required to provide concrete implementations for all of those abstract methods in the abstract class unless the subclass itself is declared as abstract.
+
+Also, an abstract class can contain abstract methods as well as non-abstract methods. 
+
+### 37. Explain Inheritance with an example.
+Inheritance is one of the major features of object-oriented programming, by which an entity inherits some characteristics and behaviors of some other entity and makes them their own. Inheritance helps to improve and facilitate code reuse.
+
+Let me explain to you with a common example. Let's take three different vehicles - a car, truck, or bus. These three are entirely different from one another in their specific characteristics and behavior. But. in all three, you will find some common elements, like the steering wheel, accelerator, clutch, brakes, etc. Though these elements are used in different vehicles, still they have features that are common among all vehicles. This is achieved with inheritance. The car, the truck, and the bus have all inherited the features like steering wheel, accelerator, clutch, brakes, etc, and used them as their own. Due to this, they did not have to create these components from scratch, thereby facilitating code reuse.
+![image](https://github.com/user-attachments/assets/3914d579-a222-48fe-96ba-30548e8fd24d)
+
+### 38. What is an exception?
+An exception can be considered as a special event, which is raised during the execution of a program at runtime, that brings the execution to a halt. The reason for the exception is mainly due to a position in the program, where the user wants to do something for which the program is not specified, like undesirable input. 
+
+### 39. What is meant by exception handling?
+No one wants its software to fail or crash. Exceptions are the major reason for software failure. The exceptions can be handled in the program beforehand and prevent the execution from stopping. This is known as exception handling.
+So exception handling is the mechanism for identifying the undesirable states that the program can reach and specifying the desirable outcomes of such states.
+Try-catch is the most common method used for handling exceptions in the program. 
+
+### 40. What is meant by Garbage Collection in the OOPs world?
+Object-oriented programming revolves around entities like objects. Each object consumes memory and there can be multiple objects of a class. So if these objects and their memories are not handled properly, then it might lead to certain memory-related errors and the system might fail.
+
+Garbage collection refers to this mechanism of handling the memory in the program. Through garbage collection, the unwanted memory is freed up by removing the objects that are no longer needed. 
 
